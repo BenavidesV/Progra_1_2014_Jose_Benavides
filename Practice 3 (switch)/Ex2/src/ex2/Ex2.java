@@ -19,7 +19,7 @@ public class Ex2 {
     public static void main(String[] args) {
         char continuar = ' ';
         String letra = " ";
-        int num = 0, ultnum = 0, ex = 0, mes, anno,n;
+        int num = 0, ultnum = 0, ex = 0, mes, anno,n,dia;
         boolean validar = true;
         Scanner teclado = new Scanner(System.in);
 
@@ -63,6 +63,21 @@ public class Ex2 {
                    
                     clsEx5 x5 = new clsEx5(n);
                     System.out.println("El numero "+n+" representado en numeración romana es: "+x5.numR());
+                    break;
+                case 6:
+                    System.out.println("Bienvenido "+"\n"+"Coloque la fecha actual "+"\n");
+                    System.out.println("Día"+"\n");
+                    dia = Integer.parseInt(teclado.nextLine());
+                    
+                    System.out.println("Mes"+"\n");
+                    mes = Integer.parseInt(teclado.nextLine());
+                    
+                    System.out.println("Año"+"\n");
+                    anno = Integer.parseInt(teclado.nextLine());
+                   
+                    clsEx6 x6 = new clsEx6(dia,mes,anno);
+                    System.out.println("El día anterior a "+dia+"/"+mes+"/"+anno+
+                            " es "+x6.cdia()+"/"+x6.cmes()+"/"+x6.canno());
                     break;
 
                 default:
