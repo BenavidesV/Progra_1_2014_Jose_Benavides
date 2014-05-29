@@ -19,7 +19,7 @@ public class Ex2 {
     public static void main(String[] args) {
         char continuar = ' ';
         String letra = " ";
-        int num = 0, ultnum = 0, ex = 0, mes, anno;
+        int num = 0, ultnum = 0, ex = 0, mes, anno,n;
         boolean validar = true;
         Scanner teclado = new Scanner(System.in);
 
@@ -49,12 +49,20 @@ public class Ex2 {
                     System.out.println("Digite el mes");
                     mes = Integer.parseInt(teclado.nextLine());
                     
-                    System.out.println("Digite el anno");
+                    System.out.println("Digite el año");
                     anno = Integer.parseInt(teclado.nextLine());
                     
 
-                    clsEx4 o = new clsEx4();
-                    System.out.println(l.valora());
+                    clsEx4 o = new clsEx4(mes,anno);
+                    System.out.println(" el mes "+mes+" del año "+anno+" tiene "+o.ndias()+" días");
+                    break;
+                case 5:
+                    System.out.println("NUMEROS ROMANOS "+"\n");
+                    //brinda un numero entre 1 y 3000
+                    n = 1+(int)(Math.random()*3000);
+                   
+                    clsEx5 x5 = new clsEx5(n);
+                    System.out.println("El numero "+n+" representado en numeración romana es: "+x5.numR());
                     break;
 
                 default:
