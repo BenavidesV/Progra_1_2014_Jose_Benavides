@@ -14,12 +14,12 @@ public class clsEx7 {
     private int dia, mes, diaS;
     private String salida;
 
-    public clsEx7(int dia) {
-        this.dia = dia;
+    public clsEx7(int pDia) {
+        this.dia = pDia;
     }
 
     public String dsemana(int dia) {
-        diaS = dia;
+        diaS = this.dia;
         do {
             diaS = diaS - 7;
         } while (diaS > 7);

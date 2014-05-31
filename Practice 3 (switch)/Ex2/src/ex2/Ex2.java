@@ -101,8 +101,7 @@ public class Ex2 {
                     
                    
                     clsEx8 x8 = new clsEx8(dw);
-                    System.out.println("Suma= "+x8.nd());
-                    ndia=dia+x8.nd();
+                    ndia=dia+x8.nd(dw);
                     System.out.println(ndia);
                     clsEx7 ad=new clsEx7(ndia);
                     System.out.println("El día " + dia + " de este mes es "+ad.dsemana(ndia));

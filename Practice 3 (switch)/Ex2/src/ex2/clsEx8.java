@@ -14,11 +14,11 @@ public class clsEx8 {
     private int ad;
     private String dw;
 
-    public clsEx8(String dw) {
-        this.dw = dw;
+    public clsEx8(String pDw) {
+        this.dw = pDw;
     }
 //defino el primer dia del mes
-    public int nd() {
+    public int nd(String dw) {
         if (dw == "lunes" || dw == "Lunes") {
             ad = 0;
         } else if (dw == "martes" || dw == "Martes") {
