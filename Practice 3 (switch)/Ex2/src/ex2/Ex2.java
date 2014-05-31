@@ -18,8 +18,8 @@ public class Ex2 {
      */
     public static void main(String[] args) {
         char continuar = ' ';
-        String letra = " ";
-        int num = 0, ultnum = 0, ex = 0, mes, anno,n,dia;
+        String letra = " ",dw= "";
+        int num = 0, ultnum = 0, ex = 0, mes=0, anno,n,dia,ndia;
         boolean validar = true;
         Scanner teclado = new Scanner(System.in);
 
@@ -78,6 +78,34 @@ public class Ex2 {
                     clsEx6 x6 = new clsEx6(dia,mes,anno);
                     System.out.println("El día anterior a "+dia+"/"+mes+"/"+anno+
                             " es "+x6.cdia()+"/"+x6.cmes()+"/"+x6.canno());
+                    break;
+                case 7:
+                    System.out.println("Bienvenido "+"\n"+"Coloque la fecha actual "+"\n");
+                    System.out.println("Día"+"\n");
+                    dia = Integer.parseInt(teclado.nextLine());
+                    
+                    System.out.println("Mes"+"\n");
+                    mes = Integer.parseInt(teclado.nextLine());
+                    
+                   
+                    clsEx7 x7 = new clsEx7(dia);
+                    System.out.println("El día " + dia + " del mes " + mes+" es "+x7.dsemana(dia));
+                    break;
+                case 8:
+                    System.out.println("Bienvenido "+"\n"+"Coloque la fecha actual "+"\n");
+                    System.out.println("Día"+"\n");
+                    dia = Integer.parseInt(teclado.nextLine());
+                    
+                    System.out.println("Escriba el primer día del mes "+"\n");
+                    dw = teclado.nextLine();
+                    
+                   
+                    clsEx8 x8 = new clsEx8(dw);
+                    System.out.println("Suma= "+x8.nd());
+                    ndia=dia+x8.nd();
+                    System.out.println(ndia);
+                    clsEx7 ad=new clsEx7(ndia);
+                    System.out.println("El día " + dia + " de este mes es "+ad.dsemana(ndia));
                     break;
 
                 default:
