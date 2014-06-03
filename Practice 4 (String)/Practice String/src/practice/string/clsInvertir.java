@@ -14,25 +14,20 @@ import java.util.Scanner;
 public class clsInvertir {
 
     private String cadena;
-    
-
-    public String getCadena() {
-        return cadena;
-    }
-
-    public void setCadena(String cadena) {
+//Método constructor
+    public clsInvertir(String cadena) {
         this.cadena = cadena;
     }
-
+//Muestra el inverso del String
     public String reverso() {
-        String retorno = "";
-
-        for (int i = getCadena().length() - 1; i >= 0; i--) {
-            retorno += getCadena().charAt(i);
+        String retorno="";
+       
+        for (int i = getCadena().length()-1; i >= 0; i--) {
+            retorno+=getCadena().charAt(i);
+        }        
+        return retorno; 
         }
-        return retorno;
-    }
-
+//crea el palíndromo
     public String crearP() {
         String ret = "";
         for (int i = getCadena().length() - 2; i >= 0; i--) {
@@ -43,12 +38,36 @@ public class clsInvertir {
         return ret;
 
     }
-
-    public String busca(String buscar) {
+//Realiza una búsqueda dentro del la frase
+    public String Busca(String buscar) {
         String nuevacadena = "";
-        
-            nuevacadena=getCadena().replaceAll(cadena, buscar);
+
+        nuevacadena = getCadena().replaceAll(buscar, "*"+buscar+"*");
         return nuevacadena;
+    }
+//Calcula el número de inicidencias de una palabra
+    public int cuenta(String palabra){
+    int cont=0;
+        for (int i = 0; i <=getCadena().length(); i++) {
+            if (getCadena().startsWith(palabra,i)==true){
+            cont++;
+            }
+        }
+    return cont;
+    }
+
+    /**
+     * @return the cadena
+     */
+    public String getCadena() {
+        return cadena;
+    }
+
+    /**
+     * @param cadena the cadena to set
+     */
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
     }
 
 }
