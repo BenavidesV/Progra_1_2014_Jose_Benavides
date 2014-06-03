@@ -42,15 +42,93 @@ public class clsString {
 
     //Retorna el string con todas las letras mayúsculas
     
-    /** public String Upper(){
+    public String Upper(){
+        String ret="";
          for (int i = 0; i <getCadena().length(); i++) {
-             if((getCadena().charAt(i)=="A")||(getCadena().charAt(i)=="a")){
-                 setCadena(cadena)="A";
+             if(getCadena().charAt(i)=='a'){
+                 ret+="A";
+             }
+             else if(getCadena().charAt(i)=='b'){
+                 ret+="B";
+             }
+             else if(getCadena().charAt(i)=='c'){
+                 ret+="C";
+             }
+             else if(getCadena().charAt(i)=='d'){
+                 ret+="D";
+             }
+             else if(getCadena().charAt(i)=='e'){
+                 ret+="E";
+             }
+             else if(getCadena().charAt(i)=='g'){
+                 ret+="G";
+             }
+             else if(getCadena().charAt(i)=='h'){
+                 ret+="H";
+             }
+             else if(getCadena().charAt(i)=='i'){
+                 ret+="I";
+             }
+             else if(getCadena().charAt(i)=='j'){
+                 ret+="J";
+             }
+             else if(getCadena().charAt(i)=='k'){
+                 ret+="K";
+             }
+             else if(getCadena().charAt(i)=='l'){
+                 ret+="L";
+             }
+             else if(getCadena().charAt(i)=='m'){
+                 ret+="M";
+             }
+             else if(getCadena().charAt(i)=='n'){
+                 ret+="N";
+             }
+             else if(getCadena().charAt(i)=='o'){
+                 ret+="O";
+             }
+             else if(getCadena().charAt(i)=='p'){
+                 ret+="P";
+             }
+             else if(getCadena().charAt(i)=='q'){
+                 ret+="Q";
+             }
+             else if(getCadena().charAt(i)=='r'){
+                 ret+="R";
+             }
+             else if(getCadena().charAt(i)=='s'){
+                 ret+="S";
+             }
+             else if(getCadena().charAt(i)=='t'){
+                 ret+="T";
+             }
+             else if(getCadena().charAt(i)=='u'){
+                 ret+="U";
+             }
+             else if(getCadena().charAt(i)=='v'){
+                 ret+="V";
+             }
+             else if(getCadena().charAt(i)=='x'){
+                 ret+="X";
+             }
+             else if(getCadena().charAt(i)=='y'){
+                 ret+="Y";
+             }
+             else if(getCadena().charAt(i)=='z'){
+                 ret+="Z";
+             }
+             else if(getCadena().charAt(i)=='w'){
+                 ret+="W";
+             }
+             else if(getCadena().charAt(i)=='f'){
+                 ret+="F";
+             }else{
+             ret+=getCadena().charAt(i);
              }
              
-         }
+         }return ret;
      }
-     **/
+    
     //retorna el valor del string que representa la posición i
     public char Valori(int pos) {
         char ret = ' ';

@@ -56,6 +56,7 @@ public class PracticeString {
                     frase = teclado.nextLine();
                     clsString cd = new clsString(frase);
 
+                    System.out.println("En Mayúscula= "+cd.Upper());
                     System.out.println("digite la posición inicial ");
                     begin = teclado.nextInt();
                     System.out.println("digite la posición final ");
