@@ -86,13 +86,12 @@ public class PracticaArreglos {
                     cantidad=1;
 
                     do {
-                        System.out.println("Digite las notas del curso A, valor " + cantidad);
+                        System.out.println("Digite los valores del vector, valor " + cantidad);
                         n1 = teclado.nextDouble();
                         x4.AgregarValor(n1);
                         cantidad++;
-                    } while (cantidad < 5);
-                    if(==true)
-                    System.out.println("El promedio mayor es el del "+x3.PromedioMayor());
+                    } while (cantidad < 11);
+                    System.out.println(x4.ordenado());
                     break;
 
             }
