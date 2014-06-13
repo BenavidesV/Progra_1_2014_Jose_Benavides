@@ -14,25 +14,25 @@ import java.util.Scanner;
 public class clsEx2 {
 
     private int[][] enteros;
-    int n, m;
+    int n = 0, m = 0;
     private int temporal[];
     private Scanner teclado;
 
     public void cargarMatriz() {
         teclado = new Scanner(System.in);
-        enteros = new int[n][m];
 
         System.out.println("Digite el número de filas");
         n = teclado.nextInt();
         System.out.println("Digite el número de columnas");
         m = teclado.nextInt();
-
+        enteros = new int[n][m];
+        
+        
         for (int f = 0; f < n; f++) {
             for (int c = 0; c < m; c++) {
                 System.out.println("Digite el valor de la fila " + f + " columna " + c);
                 enteros[f][c] = teclado.nextInt();
             }
-
         }
     }
 
@@ -40,16 +40,18 @@ public class clsEx2 {
         temporal = new int[m];
         for (int c = 0; c < m; c++) {
             temporal[c] = enteros[0][c];
-        
-        enteros[0][c] = enteros[0][1];
-        enteros[0][1]=temporal[c];
+
+            enteros[0][c] = enteros[1][c];
+            enteros[1][c] = temporal[c];
         }
 
     }
+
     public void ImprimirDatos() {
-        for (int f = 0; f < 2; f++) {
-            for (int c = 0; c < 5; c++) {
-                System.out.print(enteros[f][c]+" ");
+        System.out.println("Nueva Matriz"+"\n");
+        for (int f = 0; f < m; f++) {
+            for (int c = 0; c < n; c++) {
+                System.out.print(enteros[f][c] + " ");
 
             }
             System.out.println();

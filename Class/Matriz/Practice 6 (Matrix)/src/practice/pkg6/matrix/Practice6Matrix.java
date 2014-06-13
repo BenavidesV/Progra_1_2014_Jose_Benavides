@@ -58,5 +58,3 @@ public class Practice6Matrix {
         } while (validar);
     }
     }
-    
-}
