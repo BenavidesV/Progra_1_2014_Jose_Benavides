@@ -49,8 +49,8 @@ public class clsEx2 {
 
     public void ImprimirDatos() {
         System.out.println("Nueva Matriz"+"\n");
-        for (int f = 0; f < m; f++) {
-            for (int c = 0; c < n; c++) {
+        for (int f = 0; f < n; f++) {
+            for (int c = 0; c < m; c++) {
                 System.out.print(enteros[f][c] + " ");
 
             }
