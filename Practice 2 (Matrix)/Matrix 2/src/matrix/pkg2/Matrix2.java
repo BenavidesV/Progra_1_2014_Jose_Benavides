@@ -24,7 +24,8 @@ public class Matrix2 {
         Scanner teclado = new Scanner(System.in);
 
         do {
-            
+            System.out.println("Bienvenido"+"\n"+
+                    "Introduzca los datos de la matriz"+"\n");
             teclado = new Scanner(System.in);
             System.out.println("Digite el número de filas");
             n = teclado.nextInt();
@@ -32,7 +33,20 @@ public class Matrix2 {
             m = teclado.nextInt();
             
             teclado = new Scanner(System.in);
-            System.out.println("Digite el número de ejercicio");
+            System.out.println("Que desea hacer"+"\n"+
+                    "1. Calcular el promedio de la matriz"+"\n"+
+                    "2. Muestra el mayor de los impares"+"\n"+
+                    "3. Imprimir el promedio de los pares"+"\n"+
+                    "4. Calcular el porcentaje de impares de cada fila"+"\n"+
+                    "5. Ordenar cada fila"+"\n"+
+                    "6. Imprimir el mayor de cada fila"+"\n"+
+                    "7. Imprimir el menor de cada columna"+"\n"+
+                    "8. Iumprimir el menor impar de cada fila"+"\n"+
+                    "9. Imprimir los datos cuya suma de dígitos sea 7"+"\n"+
+                    "10. Imprimir las filas que contienen la mayor cantidad de datos pares"+"\n"+
+                    "11. Calcular la suma de dígitos de cada fila"+"\n"+
+                    "12. Imprimir los datos cuyo mayor dígito es 5"+"\n"+
+                    "13. Calcular el promedio de la matriz"+"\n");
             ex = (Integer.parseInt(teclado.nextLine()));
 
             //Cargo los datos de la matriz
@@ -48,6 +62,10 @@ public class Matrix2 {
                     oN1.promedio(n, m);
                     
 
+                    break;
+                case 2:
+                    //Imprimir el mayor de los impares
+                    
                     break;
 
                 
