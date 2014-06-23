@@ -45,13 +45,13 @@ public class AdminPalabras {
                 }
                 if (cont == listaPalabras[i].length()) {
                     c2++;
+
                 }
+                cant2 = 0;
+                cant = 0;
             }
 
-           
             //System.out.println(listaPalabras[i] + " contador " + c2);
-            cant2 = 0;
-            cant = 0;
             cont = 0;
 
         }

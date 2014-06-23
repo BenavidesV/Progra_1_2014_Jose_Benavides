@@ -98,7 +98,7 @@ public class SolucionJoseBenavides {
                         System.out.println("\n");
 
                     }
-                    System.out.println("Número de palabras que pueden formarse " + (cont-1));
+                    System.out.println("Número de palabras que pueden formarse " + (cont));
 
                 default:
 
