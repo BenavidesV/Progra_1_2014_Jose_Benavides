@@ -22,6 +22,7 @@ public class Clase15 {
         ordenamientoBurbuja ob=new ordenamientoBurbuja();
         arregloOrdenado=ob.OrdenamientoB(arreglo, "A");
         
+        
         for (int i = 0; i < arreglo.length; i++) {
             System.out.println(arregloOrdenado[i]);
             
