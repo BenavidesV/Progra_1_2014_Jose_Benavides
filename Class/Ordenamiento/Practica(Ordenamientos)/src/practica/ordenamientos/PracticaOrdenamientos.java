@@ -41,7 +41,7 @@ public class PracticaOrdenamientos {
                 clsPunto pto=new clsPunto();
                 arregloPuntosX[i]= pto.getX();
                 arregloPuntosY[i]=pto.getY();
-                arregloDistancia[i]=pto.getY();
+                arregloDistancia[i]=pto.distancia();
                 
             }
             clsOrdenamiento orden =new clsOrdenamiento();
