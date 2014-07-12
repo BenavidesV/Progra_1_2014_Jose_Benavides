@@ -192,6 +192,7 @@ public class clsJuego {
     }
 
     public void EscogerJugadorAliado() {
+        partJugadas++;
         int f, c;
 
         if (Ganador() == "No hay ganador") {
@@ -228,6 +229,7 @@ public class clsJuego {
     }
 
     public void EscogerJugadorEnemigo() {
+        partJugadas++;
 
         try {
 
@@ -345,6 +347,7 @@ public class clsJuego {
     public void IniciarNuevaPartida() {
         Scanner teclado = new Scanner(System.in);
         char b = ' ';
+        partJugadas++;
         cantidadPartidasJugadas("N");
         clsJuego nueva = new clsJuego(largo, ancho, ele);
         clsJugadores n = new clsJugadores("jugador1", "jugador2");
