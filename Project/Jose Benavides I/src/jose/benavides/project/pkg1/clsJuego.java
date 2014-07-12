@@ -574,7 +574,7 @@ public class clsJuego {
                         cant2);
                 break;
 
-            default:
+            //default:
         }
 
     }
