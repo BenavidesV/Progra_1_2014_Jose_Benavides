@@ -344,28 +344,33 @@ public class clsJuego {
 
     public void IniciarNuevaPartida() {
         Scanner teclado = new Scanner(System.in);
-        char b=' ';
+        char b = ' ';
         cantidadPartidasJugadas("N");
         clsJuego nueva = new clsJuego(largo, ancho, ele);
-        clsJugadores n=new clsJugadores("jugador1", "jugador2");
+        clsJugadores n = new clsJugadores("jugador1", "jugador2");
         //Asigno la celda aliado y enemigo de cada jugador
-            System.out.println(n.getJugador1()
-                    + " Escriba A si quiere ser aliado"
-                    + " o E si quiere ser enemigo");
+        System.out.println(n.getJugador1()
+                + " Escriba A si quiere ser aliado"
+                + " o E si quiere ser enemigo");
 
-            teclado = new Scanner(System.in);
-            b = teclado.nextLine().charAt(0);
-            if (b == 'A' || b == 'a') {
-                nueva.EscogerJugadorAliado();
-            } else {
-                nueva.EscogerJugadorEnemigo();
-            }
+        teclado = new Scanner(System.in);
+        b = teclado.nextLine().charAt(0);
+        if (b == 'A' || b == 'a') {
+            nueva.EscogerJugadorAliado();
+        } else {
+            nueva.EscogerJugadorEnemigo();
+        }
 
     }
 
-    public char rendirse() {
+    public void rendirse(String jugando) {
         verEstadisticas();
-        return 'R';
+        if (jugando == "Aliado") {
+            Perdedor('A', "Enemigo");
+        }
+        if (jugando == "Enemigo") {
+            Perdedor('A', "Aliado");
+        }
     }
 
     public String Ganador() {
@@ -384,9 +389,9 @@ public class clsJuego {
     public void Perdedor(char r, String ganador) {
         String perdedor;
         ganador = Ganador();
-        if (r == 'R' || ganador == "GANADOR jugador Enemigo") {
+        if (r == 'A' || ganador == "GANADOR jugador Enemigo") {
             perdedor = "jugador Aliado";
-        } else if (r == 'R' || ganador == "GANADOR jugador Aliado") {
+        } else if (r == 'E' || ganador == "GANADOR jugador Aliado") {
             perdedor = "jugador enemigo";
         }
     }
@@ -450,7 +455,7 @@ public class clsJuego {
             opc = teclado.nextInt();
             switch (opc) {
                 case 1:
-                    rendirse();
+                    rendirse(jugando);
                     verEstadisticas();
                     Menu2();
                     break;
@@ -474,7 +479,7 @@ public class clsJuego {
             }
             Ganador();
 
-        } while ((Ganador() == "No hay ganador")&&(opc>2));
+        } while ((Ganador() == "No hay ganador") && (opc > 2));
     }
 
     public void Menu2() {
@@ -494,31 +499,32 @@ public class clsJuego {
                 //Creo nuevas áreas de juego
                 clsJuego nuevo = new clsJuego(largo, ancho, ele);
                 System.out.print("Largo= ");
+                largo = teclado.nextInt();
+                System.out.print("Ancho= ");
+                ancho = teclado.nextInt();
+                while (largo <= 0 || ancho <= 0 || (largo == 1 && ancho == 1)) {
+                    System.out.println("Las dimesiones deben ser mayores");
+                    System.out.print("Largo= ");
                     largo = teclado.nextInt();
                     System.out.print("Ancho= ");
                     ancho = teclado.nextInt();
-                    while (largo <= 0 || ancho <= 0 || (largo == 1 && ancho == 1)) {
-                        System.out.println("Las dimesiones deben ser mayores");
-                        System.out.print("Largo= ");
-                        largo = teclado.nextInt();
-                        System.out.print("Ancho= ");
-                        ancho = teclado.nextInt();
-                    }
+                }
 
-                    System.out.println("Digite la cantidad de elementos (1-"
-                            + ((largo * ancho) - 1) + ")");
-                    ele = teclado.nextInt();
+                System.out.println("Digite la cantidad de elementos (1-"
+                        + ((largo * ancho) - 1) + ")");
+                ele = teclado.nextInt();
 
-                    /**
-                     * Cuando la cantidad de elementos es incorrecta se vuelve a
-                     * solicitar
-                     */
-                    while ((ele >= (largo * ancho)) || ele < 1) 
-                        System.out.println("La cantidad de elementos debe estar"
-                                + " entre 1 y " + ((largo * ancho) - 1));
-                        System.out.println("Digite la cantidad de elementos (1-"
-                                + ((largo * ancho) - 1) + ")");
-                        ele = teclado.nextInt();
+                /**
+                 * Cuando la cantidad de elementos es incorrecta se vuelve a
+                 * solicitar
+                 */
+                while ((ele >= (largo * ancho)) || ele < 1) {
+                    System.out.println("La cantidad de elementos debe estar"
+                            + " entre 1 y " + ((largo * ancho) - 1));
+                }
+                System.out.println("Digite la cantidad de elementos (1-"
+                        + ((largo * ancho) - 1) + ")");
+                ele = teclado.nextInt();
 
                 System.out.println("Escriba A si quiere ser aliado"
                         + " o E si quiere ser enemigo");
@@ -546,7 +552,7 @@ public class clsJuego {
                 turnoEnemigos("S");
 
                 clsJuego nvo = new clsJuego(largo, ancho, ele);
-                
+
                 System.out.println("Escriba A si quiere ser aliado"
                         + "o E si quiere ser enemigo");
                 b = teclado.nextLine().charAt(0);
@@ -556,9 +562,14 @@ public class clsJuego {
                     Jugar('E');
                 }
                 break;
-                
+
             case 3:
-                //ganador="  ";
+                System.out.println("Total de Partidas Jugadas "+partJugadas);
+                System.out.println("Total de Partidas ganadas jugador 1 "+
+                        cant1);
+                System.out.println("Total de Partidas ganadas jugador 2 "+
+                        cant2);
+                break;
 
             default:
         }

@@ -33,7 +33,9 @@ public class JoseBenavidesProject1 {
             jugador2 = teclado.nextLine();
             clsJugadores jugador = new clsJugadores(jugador1, jugador2);
             
-                try {
+            boolean Error=true;
+            while(Error){    
+            try {
                     System.out.print("Largo= ");
                     largo = teclado.nextInt();
                     System.out.print("Ancho= ");
@@ -62,34 +64,12 @@ public class JoseBenavidesProject1 {
                         ele = teclado.nextInt();
 
                     }
+                    break;
 
                 } catch (Exception e) {
-                    System.out.print("Largo= ");
-                    largo = teclado.nextInt();
-                    System.out.print("Ancho= ");
-                    ancho = teclado.nextInt();
-                    while (largo <= 0 || ancho <= 0 || (largo == 1 && ancho == 1)) {
-                        System.out.println("Las dimesiones deben ser mayores");
-                        System.out.print("Largo= ");
-                        largo = teclado.nextInt();
-                        System.out.print("Ancho= ");
-                        ancho = teclado.nextInt();
-                    }
-
-                    System.out.println("Digite la cantidad de elementos (1-"
-                            + ((largo * ancho) - 1) + ")");
-                    ele = teclado.nextInt();
-
-                    /**
-                     * Cuando la cantidad de elementos es incorrecta se vuelve a
-                     * solicitar
-                     */
-                    while ((ele >= (largo * ancho)) || ele < 1) {
-                        System.out.println("La cantidad de elementos debe estar"
-                                + " entre 1 y " + ((largo * ancho) - 1));
-                        System.out.println("Digite la cantidad de elementos (1-"
-                                + ((largo * ancho) - 1) + ")");
-                        ele = teclado.nextInt();
+                   System.out.println("Debe colocar Numeros enteros");
+                   teclado.nextLine(); 
+                   Error=true;
 
                     
                     
