@@ -16,20 +16,24 @@ public class clsJuego {
 
     //Declaro los atributos de la clase
     private int[][] area;
-    private int[][] celdaAliados = EscogerCeldaAliado();
-    private int[][] celdaEnemigos = EscogerCeldaEnemigo();
+    private int[][] celdaAliados;
+    private int[][] celdaEnemigos;
     private int largo;
     private int ancho;
     private int ele;        //es la cantidad de elementos con los que se jugará
-//    int[][] celdaAliados = EscogerCeldaAliado();
-//    int[][] celdaEnemigos = EscogerCeldaEnemigo();
-    int aliadosDestruidos = 0;
-    int enemigosDestruidos = 0, partJugadas = 0;
+
+    //Para llevar las estadísticas
+    int enemigosDestruidos = 0, aliadosDestruidos = 0;
+    int partJugadas = 0, intentosA = 0, intentosE = 0;
+    int cant1 = 0, cant2 = 0, cantp1 = 0, cantp2 = 0;
 
     public clsJuego(int largo, int ancho, int ele) {
         this.largo = largo;
         this.ancho = ancho;
         this.ele = ele;
+        celdaAliados = EscogerCeldaAliado();
+
+        celdaEnemigos = EscogerCeldaEnemigo();
 
     }
 
@@ -154,45 +158,41 @@ public class clsJuego {
     }
 
     public int[][] EscogerCeldaAliado() {
-        int[][] celdaA;
-        celdaA = area(ancho, largo);
+        celdaAliados = area(this.ancho, this.largo);
         int[] objsAliado = Objetivos(this.ele);
         for (int i = 0; i < this.ancho; i++) {
             for (int j = 0; j < this.largo; j++) {
 
-                if (presencia(objsAliado, celdaA[i][j])) {
-                    celdaA[i][j] = -2;
+                if (presencia(objsAliado, celdaAliados[i][j])) {
+                    celdaAliados[i][j] = -2;
                 } else {
-                    celdaA[i][j] = 0;
+                    celdaAliados[i][j] = 0;
                 }
             }
         }
 
-        return celdaA;
+        return celdaAliados;
     }
 
     public int[][] EscogerCeldaEnemigo() {
-        int[][] celdaE;
-
-        celdaE = area(ancho, largo);
+        celdaEnemigos = area(this.ancho, this.largo);
         int[] objsEnemigo = Objetivos(this.ele);
         for (int i = 0; i < this.ancho; i++) {
             for (int j = 0; j < this.largo; j++) {
 
-                if (presencia(objsEnemigo, celdaE[i][j])) {
-                    celdaE[i][j] = -2;
+                if (presencia(objsEnemigo, celdaEnemigos[i][j])) {
+                    celdaEnemigos[i][j] = -2;
                 } else {
-                    celdaE[i][j] = 0;
+                    celdaEnemigos[i][j] = 0;
                 }
             }
         }
 
-        return celdaE;
+        return celdaEnemigos;
     }
 
     public void EscogerJugadorAliado() {
         int f, c;
-        int[][] celdaEnemigos = EscogerCeldaEnemigo();
 
         if (Ganador() == "No hay ganador") {
             try {
@@ -228,7 +228,6 @@ public class clsJuego {
     }
 
     public void EscogerJugadorEnemigo() {
-        int[][] celdaAliados = EscogerCeldaAliado();
 
         try {
 
@@ -260,54 +259,56 @@ public class clsJuego {
     }
 
     public int turnoAliados(String nuevaPartida) {
-        int intentosA = 0;
+
         if (nuevaPartida.equals("S")) {
             intentosA = 0;
             //Si se quiere hacer una consulta se llama al método con "C"
         } else if (nuevaPartida.equals("C")) {
 
         } else {
-            intentosA += 1;
+            intentosA++;
         }
         return intentosA;
     }
 
     public int turnoEnemigos(String nuevaPartida) {
-        int intentosE = 0;
+
         if (nuevaPartida.equals("S")) {
             intentosE = 0;
         } else if (nuevaPartida.equals("C")) {
         } else {
-            intentosE += 1;
+            intentosE++;
         }
         return intentosE;
     }
 
     public void AcertarBlancoEnemigo() {
+        System.out.println("Acertó");
         SumarEnemigoDestruido("N");
         turnoAliados("N");
-        //ImprimirDatos(getCeldaEnemigos());//para ver si hubo cambio
         Jugar('A');
     }
 
     public void AcertarBlancoAliado() {
+        System.out.println("Acertó");
         SumarAliadoDestruido("N");
         turnoEnemigos("N");
         Jugar('E');
     }
 
     public void FallarBlancoEnemigo() {
+        System.out.println("Ha fallado");
         turnoAliados("N");
         Jugar('E');
     }
 
     public void FallarBlancoAliado() {
+        System.out.println("Ha fallado");
         turnoEnemigos("N");
         Jugar('A');
     }
 
     public int SumarEnemigoDestruido(String nuevaPartida) {
-        //int enemigosDestruidos = 0;
         if (nuevaPartida.equals("S")) {
             enemigosDestruidos = 0;
             //Si se quiere hacer una consulta se llama al método con "C"
@@ -334,15 +335,31 @@ public class clsJuego {
     public void verEstadisticas() {
         System.out.println("Cantidad de partidas jugadas " + partJugadas);
         System.out.println("Aliados" + "\n" + "Intentos=" + turnoAliados("C"));
-        System.out.println("Aciertos=" + SumarAliadoDestruido("C"));
+        System.out.println("Aciertos=" + SumarEnemigoDestruido("C") + "\n");
 
         System.out.println("Enemigos" + "\n" + "Intentos=" + turnoEnemigos("C"));
-        System.out.println("Aciertos=" + SumarEnemigoDestruido("C"));
+        System.out.println("Aciertos=" + SumarAliadoDestruido("C") + "\n");
 
     }
 
     public void IniciarNuevaPartida() {
+        Scanner teclado = new Scanner(System.in);
+        char b=' ';
         cantidadPartidasJugadas("N");
+        clsJuego nueva = new clsJuego(largo, ancho, ele);
+        clsJugadores n=new clsJugadores("jugador1", "jugador2");
+        //Asigno la celda aliado y enemigo de cada jugador
+            System.out.println(n.getJugador1()
+                    + " Escriba A si quiere ser aliado"
+                    + " o E si quiere ser enemigo");
+
+            teclado = new Scanner(System.in);
+            b = teclado.nextLine().charAt(0);
+            if (b == 'A' || b == 'a') {
+                nueva.EscogerJugadorAliado();
+            } else {
+                nueva.EscogerJugadorEnemigo();
+            }
 
     }
 
@@ -385,15 +402,14 @@ public class clsJuego {
     }
 
     public int CantidadDePartidasGanadasJugador2(String ganador) {
-        int cant1 = 0;
+
         if (ganador == "jugador2") {
-            cant1++;
+            cant2++;
         }
-        return cant1;
+        return cant2;
     }
 
     public int CantidadDePartidasGanadasJugador1(String ganador) {
-        int cant1 = 0;
         if (ganador == "jugador1") {
             cant1++;
         }
@@ -401,19 +417,17 @@ public class clsJuego {
     }
 
     public int CantidadDePartidasPerdidasJugador2(String perdedor) {
-        int cantp1 = 0;
         if (perdedor == "jugador2") {
-            cantp1++;
-        }
-        return cantp1;
-    }
-
-    public int CantidadDePartidasPerdidasJugador1(String perdedor) {
-        int cantp2 = 0;
-        if (perdedor == "jugador1") {
             cantp2++;
         }
         return cantp2;
+    }
+
+    public int CantidadDePartidasPerdidasJugador1(String perdedor) {
+        if (perdedor == "jugador1") {
+            cantp1++;
+        }
+        return cantp1;
     }
 
     public void Jugar(char jugador) {
@@ -427,7 +441,7 @@ public class clsJuego {
         }
         do {
 
-            System.out.println("Jugador " + jugando);
+            System.out.println("Jugador " + jugando + "\n");
             System.out.println("¿Qué desea hacer?");
             System.out.println("1. Rendirse" + "\n"
                     + "2. Iniciar Nueva Partida" + "\n"
@@ -439,11 +453,11 @@ public class clsJuego {
                     rendirse();
                     verEstadisticas();
                     Menu2();
+                    break;
 
-                    
                 case 2:
                     Menu2();
-                    
+                    break;
 
                 case 3:
                     if (jugador == 'A') {
@@ -451,16 +465,16 @@ public class clsJuego {
                     } else {
                         EscogerJugadorEnemigo();
                     }
-                    
+
                 case 4:
                     verEstadisticas();
                     Jugar(jugador);
-                    
+
                 default:
             }
             Ganador();
 
-        } while (Ganador() == "No hay ganador");
+        } while ((Ganador() == "No hay ganador")&&(opc>2));
     }
 
     public void Menu2() {
@@ -478,8 +492,33 @@ public class clsJuego {
                 turnoAliados("S");
                 turnoEnemigos("S");
                 //Creo nuevas áreas de juego
-                EscogerCeldaAliado();
-                EscogerCeldaEnemigo();
+                clsJuego nuevo = new clsJuego(largo, ancho, ele);
+                System.out.print("Largo= ");
+                    largo = teclado.nextInt();
+                    System.out.print("Ancho= ");
+                    ancho = teclado.nextInt();
+                    while (largo <= 0 || ancho <= 0 || (largo == 1 && ancho == 1)) {
+                        System.out.println("Las dimesiones deben ser mayores");
+                        System.out.print("Largo= ");
+                        largo = teclado.nextInt();
+                        System.out.print("Ancho= ");
+                        ancho = teclado.nextInt();
+                    }
+
+                    System.out.println("Digite la cantidad de elementos (1-"
+                            + ((largo * ancho) - 1) + ")");
+                    ele = teclado.nextInt();
+
+                    /**
+                     * Cuando la cantidad de elementos es incorrecta se vuelve a
+                     * solicitar
+                     */
+                    while ((ele >= (largo * ancho)) || ele < 1) 
+                        System.out.println("La cantidad de elementos debe estar"
+                                + " entre 1 y " + ((largo * ancho) - 1));
+                        System.out.println("Digite la cantidad de elementos (1-"
+                                + ((largo * ancho) - 1) + ")");
+                        ele = teclado.nextInt();
 
                 System.out.println("Escriba A si quiere ser aliado"
                         + " o E si quiere ser enemigo");
@@ -490,7 +529,8 @@ public class clsJuego {
                 } else {
                     Jugar('E');
                 }
-                
+                break;
+
             case 2:
                 //solicito el nombre a los jugadores
                 System.out.println("Digite el nombre del jugador 1 ");
@@ -504,10 +544,9 @@ public class clsJuego {
                 SumarEnemigoDestruido("S");
                 turnoAliados("S");
                 turnoEnemigos("S");
-                //Creo nuevas áreas de juego
-                EscogerCeldaAliado();
-                EscogerCeldaEnemigo();
 
+                clsJuego nvo = new clsJuego(largo, ancho, ele);
+                
                 System.out.println("Escriba A si quiere ser aliado"
                         + "o E si quiere ser enemigo");
                 b = teclado.nextLine().charAt(0);
@@ -516,9 +555,11 @@ public class clsJuego {
                 } else {
                     Jugar('E');
                 }
-              
+                break;
+                
+            case 3:
+                //ganador="  ";
 
-            
             default:
         }
 
