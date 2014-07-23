@@ -32,8 +32,9 @@ public class PracticaTDA {
         System.out.println("Digite un número que será eliminado de la lista");
             n = teclado.nextInt();
         oLista.Eliminar(n);
-        oLista.Ordenar();
-        oLista.insertarNuevaLista(oLista.Ordenar());
+        oLista.Imprimir();
+        
+        
     }
 
 }

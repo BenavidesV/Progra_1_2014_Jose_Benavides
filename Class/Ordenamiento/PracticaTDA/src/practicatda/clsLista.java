@@ -44,6 +44,16 @@ public class clsLista {
         System.out.println();
     }
 
+    public int cantidad() {
+        NodoDeLista recorrido = raiz;
+        int cont = 0;
+        while (recorrido != null) {
+            cont++;
+            recorrido = recorrido.getSiguiente();
+        }
+        return cont;
+    }
+
     public void Eliminar(int dato) {
         NodoDeLista recorrido = raiz;
         NodoDeLista anterior;
@@ -56,28 +66,49 @@ public class clsLista {
             recorrido = recorrido.getSiguiente();
         }
     }
-
-    public NodoDeLista Ordenar() {
-        
+ public int[]OrdenS(int arreglo[])
+    {
+        int Indice=0;
+        int Indice2=0;
+        double Menor=0;
+        int Posicion=0;
+        double Temporal=0;
+        for(Indice=0;Indice<arreglo.length-1;Indice++)
+        {
+            Menor=arreglo[Indice];
+            Posicion=Indice;
+            for(Indice2=Indice+1;Indice2<arreglo.length;Indice2++)
+            {
+                if(arreglo[Indice2]<Menor)
+                {
+                    Menor=arreglo[Indice2];
+                    Posicion=Indice2;
+                }
+            }
+            if(Posicion!=Indice)
+            {
+              Temporal=arreglo[Indice];
+              arreglo[Indice]=arreglo[Posicion];
+              arreglo[Posicion]=Temporal;
+                
+            }
+        }
+        return arreglo;
+    }
+    public NodoDeLista OrdenarLista() {
+        int[]numeros=new int[cantidad()];
         NodoDeLista menor = raiz;
-        NodoDeLista sig = raiz;
         NodoDeLista recorrido = raiz;
         while (recorrido != null) {
             if (recorrido.getDato() <= menor.getDato()) {
                 menor = recorrido;
-                sig=recorrido;
                 Eliminar(recorrido.getDato());
-                recorrido=sig;
+
             }
-             recorrido = recorrido.getSiguiente();
+            recorrido = recorrido.getSiguiente();
 
         }
         return menor;
     }
 
-    public void insertarNuevaLista(NodoDeLista Ordenar) {
-        clsLista nuevaLista = new clsLista();
-        nuevaLista.Insertar(Ordenar.getDato());
-        Imprimir();
-    }
 }
