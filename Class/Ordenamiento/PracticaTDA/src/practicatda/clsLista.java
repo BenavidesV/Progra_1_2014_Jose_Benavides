@@ -12,9 +12,11 @@ package practicatda;
 public class clsLista {
 
     private NodoDeLista raiz;
+    int[] vector1 = new int[cantidad()];
 
     public clsLista() {
         raiz = null;
+
     }
 
     public void Insertar(int dato) {
@@ -66,49 +68,4 @@ public class clsLista {
             recorrido = recorrido.getSiguiente();
         }
     }
- public int[]OrdenS(int arreglo[])
-    {
-        int Indice=0;
-        int Indice2=0;
-        int Menor=0;
-        int Posicion=0;
-        int Temporal=0;
-        for(Indice=0;Indice<arreglo.length-1;Indice++)
-        {
-            Menor=arreglo[Indice];
-            Posicion=Indice;
-            for(Indice2=Indice+1;Indice2<arreglo.length;Indice2++)
-            {
-                if(arreglo[Indice2]<Menor)
-                {
-                    Menor=arreglo[Indice2];
-                    Posicion=Indice2;
-                }
-            }
-            if(Posicion!=Indice)
-            {
-              Temporal=arreglo[Indice];
-              arreglo[Indice]=arreglo[Posicion];
-              arreglo[Posicion]=Temporal;
-                
-            }
-        }
-        return arreglo;
-    }
-    public NodoDeLista OrdenarLista() {
-        int[]numeros=new int[cantidad()];
-        NodoDeLista menor = raiz;
-        NodoDeLista recorrido = raiz;
-        while (recorrido != null) {
-            if (recorrido.getDato() <= menor.getDato()) {
-                menor = recorrido;
-                Eliminar(recorrido.getDato());
-
-            }
-            recorrido = recorrido.getSiguiente();
-
-        }
-        return menor;
-    }
-
 }

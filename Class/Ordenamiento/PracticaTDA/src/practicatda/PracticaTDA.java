@@ -28,7 +28,7 @@ public class PracticaTDA {
             System.out.println("Digite un número que será el nodo de la lista");
             n = teclado.nextInt();
         }
-        oLista.Imprimir();
+        oLista.cantidad();
         System.out.println("Digite un número que será eliminado de la lista");
             n = teclado.nextInt();
         oLista.Eliminar(n);
