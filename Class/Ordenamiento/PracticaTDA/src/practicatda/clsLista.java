@@ -70,9 +70,9 @@ public class clsLista {
     {
         int Indice=0;
         int Indice2=0;
-        double Menor=0;
+        int Menor=0;
         int Posicion=0;
-        double Temporal=0;
+        int Temporal=0;
         for(Indice=0;Indice<arreglo.length-1;Indice++)
         {
             Menor=arreglo[Indice];
