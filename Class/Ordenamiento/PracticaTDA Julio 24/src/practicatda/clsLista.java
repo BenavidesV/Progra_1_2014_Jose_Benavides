@@ -15,6 +15,9 @@ public class clsLista {
 
     private NodoDeLista raiz;
     private NodoDeLista raiz2da;
+    private NodoDeLista par;
+    private NodoDeLista impar;
+    private NodoDeListaString union;
 
     public clsLista() {
         raiz = null;
@@ -38,16 +41,67 @@ public class clsLista {
             auxiliar.setSiguiente(nuevo);
         }
     }
+
+    public void InsertarPares(int dato) {
+        NodoDeLista nuevo;
+        nuevo = new NodoDeLista();
+        nuevo.setDato(dato);
+        if (par == null) {
+            nuevo.setSiguiente(null);
+            par = nuevo;
+        } else {
+            NodoDeLista auxiliar = par;
+            while (auxiliar.getSiguiente() != null) {
+                auxiliar = auxiliar.getSiguiente();
+
+            }
+            auxiliar.setSiguiente(nuevo);
+        }
+    }
+
+    public void InsertarImpares(int dato) {
+        NodoDeLista nuevo;
+        nuevo = new NodoDeLista();
+        nuevo.setDato(dato);
+        if (impar == null) {
+            nuevo.setSiguiente(null);
+            impar = nuevo;
+        } else {
+            NodoDeLista auxiliar = impar;
+            while (auxiliar.getSiguiente() != null) {
+                auxiliar = auxiliar.getSiguiente();
+
+            }
+            auxiliar.setSiguiente(nuevo);
+        }
+    }
+    public void InsertarUnion(String dato) {
+        NodoDeListaString nuevo;
+        nuevo = new NodoDeListaString();
+        nuevo.setDato(dato);
+        if (union == null) {
+            nuevo.setSiguiente(null);
+            union = nuevo;
+        } else {
+            NodoDeListaString auxiliar = union;
+            while (auxiliar.getSiguiente() != null) {
+                auxiliar = auxiliar.getSiguiente();
+
+            }
+            auxiliar.setSiguiente(nuevo);
+        }
+    }
     int[] vector1 = new int[cantidad()];
 
     public void AgregarAlArreglo() {
         for (int i = 0; i < vector1.length; i++) {
             NodoDeLista recorrido = raiz;
             while (recorrido != null) {
-                if(vector1[i]!=0){
-                vector1[i] = recorrido.getDato();
-                recorrido = recorrido.getSiguiente();
-            }}
+                if (vector1[i] != 0) {
+                    vector1[i] = recorrido.getDato();
+                    recorrido = recorrido.getSiguiente();
+                }
+            }
 
             break;
         }
@@ -170,6 +224,14 @@ public class clsLista {
                 recorrido = recorrido.getSiguiente();
             }
         }
+        recorrido = raiz;
+        System.out.println("Listado de los elementos "
+                + "de la lista 1 y 2 concatenadas ");
+        while (recorrido != null) {
+            System.out.println(recorrido.getDato());
+            recorrido = recorrido.getSiguiente();
+        }
+        System.out.println();
     }
 
     public void invertirLista() {
@@ -194,15 +256,71 @@ public class clsLista {
         NodoDeLista temp = raiz;
         NodoDeLista recorrido = raiz;
         NodoDeLista recorrido2 = raiz2da;
-        while (recorrido!= null && recorrido2!= null) {
+        while (recorrido != null && recorrido2 != null) {
             temp = recorrido.getSiguiente();
-            if(temp!=null){
-            recorrido.setSiguiente(recorrido2);
-            recorrido=(recorrido2.getSiguiente());
-            recorrido2.setSiguiente(temp);
-            recorrido2=temp.getSiguiente();
-            temp.setSiguiente(recorrido);
-            
-        }}
+            if (temp != null) {
+                recorrido.setSiguiente(recorrido2);
+                recorrido = (recorrido2.getSiguiente());
+                recorrido2.setSiguiente(temp);
+                recorrido2 = temp.getSiguiente();
+                temp.setSiguiente(recorrido);
+
+            }
+        }
+        recorrido = raiz;
+        System.out.println("Listado de los elementos de la lista 1 ");
+        while (recorrido != null) {
+            System.out.println(recorrido.getDato());
+            recorrido = recorrido.getSiguiente();
+        }
+        System.out.println();
+
     }
+
+    public void paridad() {
+        NodoDeLista recorrido = raiz;
+        while (recorrido != null) {
+            if (recorrido.getDato() % 2 == 0) {
+                InsertarPares(recorrido.getDato());
+            } else {
+                InsertarImpares(recorrido.getDato());
+            }
+            recorrido = recorrido.getSiguiente();
+        }
+        // Para imprimir los valores
+        NodoDeLista elemento = par;
+        System.out.println("Listado de los elementos pares ");
+        while (elemento != null) {
+            System.out.println(elemento.getDato());
+            elemento = elemento.getSiguiente();
+        }
+        System.out.println();
+
+        System.out.println("Listado de los elementos impares ");
+        elemento = impar;
+        while (elemento != null) {
+            System.out.println(elemento.getDato());
+            elemento = elemento.getSiguiente();
+        }
+        System.out.println();
+    }
+
+    public void Union() {
+        NodoDeLista recorrido = raiz;
+        NodoDeLista recorrido2 = raiz2da;
+
+        while (recorrido != null && recorrido2 != null) {
+            InsertarUnion(""+recorrido.getDato()+"-"+""+recorrido2.getDato());
+            recorrido=recorrido.getSiguiente();
+            recorrido2=recorrido2.getSiguiente();
+        }
+        NodoDeListaString elemento = union;
+        System.out.println("Listado union de las dos listas ");
+        while (elemento != null) {
+            System.out.println(elemento.getDato());
+            elemento = elemento.getSiguiente();
+        }
+        System.out.println();
+    }
+
 }

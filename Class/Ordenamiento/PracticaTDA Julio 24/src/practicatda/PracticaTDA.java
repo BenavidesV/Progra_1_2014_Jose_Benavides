@@ -19,7 +19,7 @@ public class PracticaTDA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int ejercicio = 0, n = 0,cantNodos=0;
+        int ejercicio = 0, n = 0, cantNodos = 0;
         char continuar = ' ';
         boolean validar = true;
 
@@ -39,17 +39,15 @@ public class PracticaTDA {
                         oLista.Insertar(n);
                         System.out.println("Digite un número que será el nodo de la lista");
                         n = teclado.nextInt();
-                        
+
                     }
+                    oLista.cantidad();
                     oLista.AgregarAlArreglo();
                     oLista.OrdenS();
                     oLista.ListaOrdenada();
-                    
-        //Después de ordenar el arreglo inserto los valores en la lista
-                    
-                    
-                    
+                    oLista.Imprimir();
 
+                    //Después de ordenar el arreglo inserto los valores en la lista
 //        System.out.println("Digite un número que será eliminado de la lista");
 //            n = teclado.nextInt();
 //        oLista.Eliminar(n);
@@ -81,8 +79,6 @@ public class PracticaTDA {
                         n = teclado.nextInt();
                     }
                     oLista.concatenar();
-                    System.out.println("Concatenadas " + "\n");
-                    oLista.Imprimir();
                     break;
                 case 5:
                     System.out.println("Digite un número que será el nodo de la lista ");
@@ -106,6 +102,16 @@ public class PracticaTDA {
                         System.out.println("Digite un número que será el nodo de la lista");
                         n = teclado.nextInt();
                     }
+                    oLista.paridad();
+                    break;
+                case 8:
+                    System.out.println("Digite un número que será el nodo de la lista ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        oLista.Insertar(n);
+                        System.out.println("Digite un número que será el nodo de la lista");
+                        n = teclado.nextInt();
+                    }
                     System.out.println("Digite un número que será el nodo de la lista 2 ");
                     n = teclado.nextInt();
                     while (n != 0) {
@@ -114,9 +120,23 @@ public class PracticaTDA {
                         n = teclado.nextInt();
                     }
                     oLista.intercalarListas();
-                    System.out.println("Intercaladas " + "\n");
-                    oLista.Imprimir();
                     break;
+                case 9:
+                    System.out.println("Digite un número que será el nodo de la lista ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        oLista.Insertar(n);
+                        System.out.println("Digite un número que será el nodo de la lista");
+                        n = teclado.nextInt();
+                    }
+                    System.out.println("Digite un número que será el nodo de la lista 2 ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        oLista.InsertarOtra(n);
+                        System.out.println("Digite un número que será el nodo de la lista");
+                        n = teclado.nextInt();
+                    }
+                    oLista.Union();
 
             }
 
