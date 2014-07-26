@@ -137,6 +137,19 @@ public class PracticaTDA {
                         n = teclado.nextInt();
                     }
                     oLista.Union();
+                case 10:
+                    Pila opila = new Pila();
+                    System.out.println("Digite un número que será el "
+                            + "nuevo elemento de la pila ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opila.Push(n);
+                        System.out.println("Digite un número que será el nodo de la Pila");
+                        n = teclado.nextInt();
+                    }
+                    opila.Imprimir();
+                    opila.PilaInvertida();
+                      
 
             }
 

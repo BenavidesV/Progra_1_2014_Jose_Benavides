@@ -75,6 +75,7 @@ public class clsLista {
             auxiliar.setSiguiente(nuevo);
         }
     }
+
     public void InsertarUnion(String dato) {
         NodoDeListaString nuevo;
         nuevo = new NodoDeListaString();
@@ -310,9 +311,9 @@ public class clsLista {
         NodoDeLista recorrido2 = raiz2da;
 
         while (recorrido != null && recorrido2 != null) {
-            InsertarUnion(""+recorrido.getDato()+"-"+""+recorrido2.getDato());
-            recorrido=recorrido.getSiguiente();
-            recorrido2=recorrido2.getSiguiente();
+            InsertarUnion("" + recorrido.getDato() + "-" + "" + recorrido2.getDato());
+            recorrido = recorrido.getSiguiente();
+            recorrido2 = recorrido2.getSiguiente();
         }
         NodoDeListaString elemento = union;
         System.out.println("Listado union de las dos listas ");
