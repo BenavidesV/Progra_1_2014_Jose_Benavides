@@ -148,8 +148,79 @@ public class PracticaTDA {
                         n = teclado.nextInt();
                     }
                     opila.Imprimir();
+                    break;
+
+                case 11:
+                    opila = new Pila();
+                    System.out.println("Digite un número que será el "
+                            + "nuevo elemento de la pila ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opila.Push(n);
+                        System.out.println("Digite un número que será el nodo de la Pila");
+                        n = teclado.nextInt();
+                    }
+                    opila.Imprimir();
                     opila.PilaInvertida();
-                      
+                    break;
+                case 12:
+                    PilaF opilaF = new PilaF();
+                    System.out.println("Digite un número para la pila 1 ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opilaF.Push(n);
+                        System.out.println("Digite un número  para la pila 1");
+                        n = teclado.nextInt();
+                    }
+                    System.out.println("Digite un número para la pila 2 ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opilaF.PushP(n);
+                        System.out.println("Digite un número para la pila 2");
+                        n = teclado.nextInt();
+                    }
+                    opilaF.PushPila();
+                    break;
+                case 13:
+                    opila = new Pila();
+                    System.out.println("Digite un número para la pila 1 ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opila.Push(n);
+                        System.out.println("Digite un número  para la pila 1");
+                        n = teclado.nextInt();
+                    }
+                    System.out.println("Digite un número para la pila 2 ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opila.PushP(n);
+                        System.out.println("Digite un número para la pila 2");
+                        n = teclado.nextInt();
+                    }
+                    opila.InvertirListas();
+                    break;
+                case 14:
+                    opila = new Pila();
+                    System.out.println("Digite un número para la pila 1 ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opila.Push(n);
+                        System.out.println("Digite un número  para la pila 1");
+                        n = teclado.nextInt();
+                    }
+                    opila.DuplicarLista();
+                    break;
+                case 15:
+                    opila = new Pila();
+                    System.out.println("Digite un número para la pila 1 ");
+                    n = teclado.nextInt();
+                    while (n != 0) {
+                        opila.Push(n);
+                        System.out.println("Digite un número  para la pila 1");
+                        n = teclado.nextInt();
+                    }
+                    opila.MoverYCopiar();
+                    break;
 
             }
 
