@@ -16,7 +16,7 @@ import project2014.clsLlenarCalendario;
 
 /**
  *
- * @author familia
+ * @author Jose E & Alvaro
  */
 public class frmSedes extends javax.swing.JFrame {
 

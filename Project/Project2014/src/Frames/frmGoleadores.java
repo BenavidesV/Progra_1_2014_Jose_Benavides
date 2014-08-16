@@ -12,7 +12,7 @@ import project2014.clsLlenar;
 
 /**
  *
- * @author familia
+ * @author Jose E & Alvaro
  */
 public class frmGoleadores extends javax.swing.JFrame {
 
@@ -27,14 +27,18 @@ public class frmGoleadores extends javax.swing.JFrame {
         NodoEquipo rec = EquiposOrdenados.getRaiz();
 
         String goleadores = "";
+        int gol = 0;
 
         while (rec != null) {
             NodoJugador recJ = rec.getJugadores();
 
             while (recJ != null) {
+                if (recJ.getGoles() > gol) {
+                    gol=recJ.getGoles();
 
-                goleadores += " " + recJ.getNombre() + "          "
-                        + recJ.getGoles() + "\n";
+                    goleadores += " " + recJ.getNombre() + "          "
+                            + recJ.getGoles() + "\n";
+                }
 
                 recJ = recJ.getSiguienteJugador();
             }
@@ -57,8 +61,6 @@ public class frmGoleadores extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtGoleadores = new javax.swing.JTextArea();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Goleadores Top 5");
 
