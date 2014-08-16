@@ -27,18 +27,17 @@ public class frmGoleadores extends javax.swing.JFrame {
         NodoEquipo rec = EquiposOrdenados.getRaiz();
 
         String goleadores = "";
-        int gol = 0;
 
         while (rec != null) {
-            NodoJugador recJ = rec.getJugadores();
+            NodoJugador recJ = rec.getGoleadores();
 
             while (recJ != null) {
-                if (recJ.getGoles() > gol) {
-                    gol=recJ.getGoles();
+                if (recJ.getGoles() >3) {
 
-                    goleadores += " " + recJ.getNombre() + "          "
-                            + recJ.getGoles() + "\n";
+                goleadores += " " + recJ.getNombre() + "          "
+                            + recJ.getGoles() + "\n";    
                 }
+                
 
                 recJ = recJ.getSiguienteJugador();
             }

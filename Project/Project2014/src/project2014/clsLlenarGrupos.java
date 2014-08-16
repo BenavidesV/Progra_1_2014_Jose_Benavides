@@ -14,7 +14,6 @@ import Listas.Grupos;
  */
 public class clsLlenarGrupos {
 
-    //Se insertan los partidos
     public Grupos LlenarGrupo(Grupos grupoX) {
         //Si se quiere ver solo los equipos de algún grupo
         

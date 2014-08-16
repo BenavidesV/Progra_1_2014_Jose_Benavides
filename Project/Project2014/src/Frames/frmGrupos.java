@@ -29,19 +29,24 @@ public class frmGrupos extends javax.swing.JFrame {
         clsLlenarGrupos TodosG = new clsLlenarGrupos();
         TodosG.LlenarGrupo(rellenar);
         NodoGrupo recorridoG = rellenar.getGrupoX();
-        
-        String mensaje="";
-        while (recorridoG != null) {
-            Equipos recE=recorridoG.getListaEquipos();
-            while(recE!=null){
-             mensaje+= recorridoG.getListaEquipos().getEquipoGrupo().getNombre();
-             recE=recE.getSiguienteEquipos();
-            
-        }
-        recorridoG = recorridoG.getSiguienteGrupo();
-        txtGrupos.setText(mensaje);
 
-    }}
+        String mensaje = "";
+        while (recorridoG != null) {
+            Equipos recE = recorridoG.getListaEquipos();
+            while (recE != null) {
+                NodoEquipoenGrupo recEQ = recE.getEquipoGrupo();
+                while (recEQ != null) {
+                    mensaje +=recEQ.getNombre()+" "+recEQ.getPts()+"\n";
+                    recEQ = recEQ.getSiguienteEquipo();
+                }
+                recE = recE.getSiguienteEquipos();
+
+            }
+            recorridoG = recorridoG.getSiguienteGrupo();
+            txtGrupos.setText(mensaje);
+
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
