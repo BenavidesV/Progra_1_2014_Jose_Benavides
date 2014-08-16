@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JRadioButtonMenuItem" name="jRadioButtonMenuItem1">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="jRadioButtonMenuItem1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButtonMenuItem" name="jRadioButtonMenuItem2">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="jRadioButtonMenuItem2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButtonMenuItem" name="jRadioButtonMenuItem3">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="jRadioButtonMenuItem3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="jCheckBoxMenuItem1"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPopupMenu" name="jPopupMenu1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+    </Container>
+    <Component class="javax.swing.JRadioButtonMenuItem" name="jRadioButtonMenuItem4">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="jRadioButtonMenuItem4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButtonMenuItem" name="jRadioButtonMenuItem5">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="jRadioButtonMenuItem5"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="jTable1">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="4" rowCount="4">
+                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+              </Table>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup3">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup4">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup5">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup6">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup7">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup8">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup9">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup10">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rbCorinthians" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbBaxaida" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbFonteNova" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbPantanal" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbPernambuco" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rbDasDunas" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMineirao" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbNacional" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMaracana" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbCastelao" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="75" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="216" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbAmazonia" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                              <Component id="rbBeira" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="79" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                              <Component id="btnPartidos" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="rbAmazonia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rbBeira" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" min="-2" pref="27" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rbCorinthians" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbCastelao" min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rbBaxaida" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbDasDunas" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rbFonteNova" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMineirao" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rbPantanal" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbNacional" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rbPernambuco" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMaracana" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="186" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Component id="btnPartidos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="70" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Estadios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="Partidos en este estadio"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jComboBox1MouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextPane" name="txtClima">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btnPartidos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CARGAR PARTIDOS"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPartidosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbCastelao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ESTADIO CASTELAO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbPernambuco">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ARENA PERNAMBUCO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbPantanal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ARENA PANTANAL"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbBaxaida">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ARENA DA BAXAIDA"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbBaxaidaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbBeira">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ESTADIO BEIRA-RIO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbAmazonia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ARENA AMAZONIA"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbCorinthians">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ARENA CORINTHIANS"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbFonteNova">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ARENA FONTE NOVA"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ARENA AMAZONIA"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbDasDunas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ESTADIO DAS DUNAS"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbMineirao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ESTADIO MINEIRAO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbNacional">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ESTADIO NACIONAL"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbMaracana">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ESTADIO MARACANA"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
